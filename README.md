@@ -135,11 +135,10 @@ Mô hình ảnh màu được kiểm thử trong điều kiện thực tế:
 - **Đánh giá**:  
 Mô hình được kiểm thử trên tập dữ liệu gồm 405 ảnh tại cùng một hộp nuôi, nhưng sau khi phân loại, kết quả cho thấy một con cua bị phân loại thành 3 kích cỡ khác nhau. Nguyên nhân chính là do hiệu ứng "cánh bướm": sau khi khoanh vùng, đã xuất hiện sai số điểm ảnh giữa các ảnh, dẫn đến việc xác định điểm chiều dài và chiều rộng không ổn định và thiếu chính xác. Hơn nữa, khi ánh xạ lên bản so sánh, sai số tiếp tục gia tăng tại ranh giới giữa hai kích cỡ cua (ví dụ: 9,9 cm so với 10 cm giữa Y3 và Y4), gây ra sai số kích cỡ dao động 23,5%. Tuy nhiên, sai số phân loại thực tế chỉ đạt 0,04%, tương ứng với 17/405 lần kiểm thử sai.  
 ## 4. Thảo luận  
-Hệ thống chứng minh tiềm năng trong tự động hóa phân loại kích cỡ cua, với độ chính xác cao và khả năng xử lý thời gian thực. Tuy nhiên, các thách thức bao gồm:  
-- Hiệu suất kém trên lớp Background do mất cân bằng dữ liệu (Crab: 60–76 mẫu, Reference: 29 mẫu).  
+Hệ thống chứng minh tiềm năng trong tự động hóa phân loại kích cỡ cua, với độ chính xác cao và khả năng xử lý thời gian thực. Tuy nhiên, các thách thức bao gồm:   
 - Nhạy cảm với điều kiện ánh sáng và tư thế cua.  
 - Sai số đo lường gần ngưỡng phân loại (ví dụ: 10,9 cm so với 11 cm).  
-
+- Thiếu dữ liệu phân loại.
 **Khuyến nghị cải tiến**:  
 - Thu thập tập dữ liệu lớn hơn, đa dạng hơn.  
 - Triển khai chụp ảnh đa góc và tái tạo 3D để tăng độ chính xác.  
