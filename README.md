@@ -114,31 +114,20 @@ Hình ảnh huấn luyện: ![Ảnh train](images/map_plot.png)
 - **Đánh giá**: Mô hình ảnh màu vượt trội ở khả năng phân loại và phân đoạn, đặc biệt với lớp Crab và Reference.  
 
 ### 3.5 Kiểm thử  
-Mô hình ảnh màu được kiểm thử trong điều kiện thực tế để đánh giá hiệu suất phân đoạn và phân loại kích cỡ cua. Kết quả được so sánh với mô hình ảnh xám (đã loại bỏ) để làm rõ sự khác biệt.  
-
-#### 3.5.1 Kết quả phân đoạn  
-- **IoU cho phân đoạn cua (mô hình ảnh màu)**: Đạt 0,89–0,92, thể hiện khả năng phân đoạn chính xác vùng mai cua và vật tham chiếu.  
-  - **Kết quả kiểm thử (mô hình ảnh màu)**:  
-    - Lần 1: ![Ảnh color test 1.1](images/color_test1.1.png) ![Ảnh color test 1.2](images/color_test1.2.png)  
-    - Lần 2: ![Ảnh color test 2.1](images/color_test2.1.png) ![Ảnh color test 2.2](images/color_test2.2.png)  
-    - Lần 3: ![Ảnh color test 3.1](images/color_test2.1.png) ![Ảnh color test 3.2](images/color_test3.2.png)  
-  - **Nhận xét**: Mô hình ảnh màu cho thấy khả năng phân đoạn ổn định, với IoU cao và ít lỗi phân đoạn, ngay cả trong điều kiện thực tế có biến động về ánh sáng và tư thế cua.  
-
-  - **Kết quả kiểm thử (mô hình ảnh xám - đã loại bỏ)**:  
-    - Lần 1: ![Ảnh gray test 1.1](images/gray_test1.1.png) ![Ảnh gray test 1.2](images/gray_test1.2.png)  
-    - Lần 2: ![Ảnh gray test 2.1](images/gray_test2.1.png) ![Ảnh gray test 2.2](images/gray_test2.2.png)  
-    - Lần 3: ![Ảnh gray test 3.1](images/gray_test2.1.png) ![Ảnh gray test 3.2](images/gray_test3.2.png)  
-  - **Nhận xét**: Mô hình ảnh xám gặp khó khăn trong việc phân biệt cua với nền, dẫn đến lỗi phân đoạn nhiều hơn, đặc biệt khi ánh sáng yếu hoặc cua có màu sắc tương đồng với nền.  
-
-#### 3.5.2 Phân loại kích cỡ  
-- **Sai số đo lường**: Sai số tương đối đạt 23,5%, dẫn đến phân loại kích cỡ không nhất quán. Ví dụ, một con cua bị phân loại thành Y5, Y3 và Y4 trong các lần đo khác nhau.  
-- **Phân tích phân loại**:  
-  - Biểu đồ phân loại: ![Ảnh phân loại](images/barplot.png)  
-  - Biểu đồ phân bố phân loại: ![Ảnh phân bố phân loại](images/boxplot.png)  
-- **Phân tích dữ liệu**:  
-  - Tương quan chiều rộng và chiều cao: ![Ảnh tương quan](images/scatterplot_width_height.png)  
-  - Phân bố kích cỡ theo lớp: ![Ảnh phân bố](images/boxplot_size_class.png)  
-- **Nhận xét**: Sai số đo lường cao là do tư thế cua không đồng nhất và ảnh hưởng của ánh sáng, gây khó khăn trong việc xác định chính xác chiều rộng mai cua.  
+Mô hình ảnh màu được kiểm thử trong điều kiện thực tế:  
+- **IoU cho phân đoạn cua**: 0,89–0,92.  
+  - **Model ảnh màu đã chọn**:  
+    + Lần 1: ![Ảnh color test 1.1](images/color_test1.1.png) ![Ảnh color test 1.2](images/color_test1.2.png)  
+    + Lần 2: ![Ảnh color test 2.1](images/color_test2.1.png) ![Ảnh color test 2.2](images/color_test2.2.png)  
+    + Lần 3: ![Ảnh color test 3.1](images/color_test2.1.png) ![Ảnh color test 3.2](images/color_test3.2.png)  
+  - **Model ảnh xám đã loại**:  
+    + Lần 1: ![Ảnh gray test 1.1](images/gray_test1.1.png) ![Ảnh gray test 1.2](images/gray_test1.2.png)  
+    + Lần 2: ![Ảnh gray test 2.1](images/gray_test2.1.png) ![Ảnh gray test 2.2](images/gray_test2.2.png)  
+    + Lần 3: ![Ảnh gray test 3.1](images/gray_test2.1.png) ![Ảnh gray test 3.2](images/gray_test3.2.png)  
+- **Đánh giá**:  
+  ![Ảnh Tương quan](images/scatterplot_width_height.png) ![Ảnh phân bố](images/boxplot_size_class.png)  
+- **Phân loại kích cỡ**: Sai số đo lường tương đối 23,5%, dẫn đến phân loại không nhất quán (một con cua bị phân loại thành Y5, Y3 và Y4).  
+  ![Ảnh phan loại](images/barplot.png) ![Ảnh phân bố phân loại](images/boxplot.png)  
 ## 4. Thảo luận  
 Hệ thống chứng minh tiềm năng trong tự động hóa phân loại kích cỡ cua, với độ chính xác cao và khả năng xử lý thời gian thực. Tuy nhiên, các thách thức bao gồm:  
 - Hiệu suất kém trên lớp Background do mất cân bằng dữ liệu (Crab: 60–76 mẫu, Reference: 29 mẫu).  
