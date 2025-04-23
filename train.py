@@ -1,7 +1,7 @@
 from ultralytics import YOLO
 
 # Tải mô hình YOLOv11 phân đoạn
-model = YOLO("yolo11n-seg.pt")  # Mô hình nhẹ
+model = YOLO("model/yolo11n-seg.pt")  # Mô hình nhẹ
 
 if __name__ == "__main__":
     # Huấn luyện
