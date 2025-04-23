@@ -12,10 +12,12 @@ Ngành nuôi trồng thủy sản Việt Nam, đặc biệt tại Đồng bằng
 ### 2.1 Thu thập và xử lý dữ liệu
 
 Tập dữ liệu gồm 720 ảnh được thu thập bằng thiết bị ESP32-CAM tại các trang trại cua ở Trà Vinh và Cà Mau. Ảnh được chụp trong điều kiện ánh sáng kiểm soát (khoảng cách 30–40 cm, hỗ trợ đèn LED) và xử lý như sau:
-![Setup](images/setup.png)
-- Điều chỉnh kích thước ảnh về 640×640 pixel.
+![Thiết lập hồ](images/setup.png)
+- Điều chỉnh kích thước ảnh về 1024x768 pixel.
+![Ảnh mẫu thu ](images/mau_thu.png)
 - Gán nhãn bằng công cụ LabelMe cho phân đoạn (lớp: Crab, Reference).
-- Tăng cường dữ liệu thông qua xoay, lật và điều chỉnh độ sáng.
+![Ảnh mẫu đã gán nhãn ](images/mau_da_gan_nhan.png)
+- Tăng cường dữ liệu thông qua xoay, lật và điều chỉnh độ sáng...(không zoom/cắt).
 
 ### 2.2 Kiến trúc mô hình
 
@@ -90,6 +92,4 @@ Hệ thống cho thấy tiềm năng lớn trong việc tự động hóa phân 
 
 Hệ thống dựa trên YOLOv11n-seg đã thành công trong việc tự động hóa phân loại kích cỡ cua biển, đạt độ chính xác 97,8% và hiệu suất thời gian thực. Đây là một giải pháp tiết kiệm chi phí cho ngành thủy sản Việt Nam, giúp giảm chi phí lao động và nâng cao giá trị xuất khẩu. Các nghiên cứu tiếp theo cần tập trung vào việc cải thiện khả năng xử lý các điều kiện môi trường khác nhau và tích hợp thêm các chỉ số chất lượng cua.
 
-## Lời cảm ơn
-
-Nghiên cứu này nhận được sự hỗ trợ từ các hộ nuôi cua tại Trà Vinh và Cà Mau, những người đã cung cấp quyền truy cập vào trang trại và chia sẻ thông tin quý giá về thách thức trong phân loại thủ công.
+## Tài nguyên
