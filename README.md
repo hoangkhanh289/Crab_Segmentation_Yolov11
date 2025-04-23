@@ -43,7 +43,7 @@ Hai mô hình được đánh giá: mô hình ảnh màu và mô hình ảnh xá
 #### Mô hình ảnh màu  
 Hình ảnh minh họa: ![Ảnh color 1](images/color1.png)  
 - **Precision (B)**: Tăng từ 0,0059 (epoch 1) lên ~0,95 (epoch 47); ổn định ở mức 0,98–1,0 từ epoch 9.  
-- **Recall (B)**: Giảm từ 0,98276 (epoch 1) xuống 0,5 (epoch 3), sau đó tăng lên ~0,9 (epoch 100); ổn định ở mức 0,965–1,0 từ epoch 9.  
+- **Recall (B)**: Giảm từ 0,98276 (epoch 1) xuống 0,5 (epoch 3), sau đó tăng lên ~0,9 ; ổn định ở mức 0,965–1,0 từ epoch 9.  
 - **mAP@0.5 (B)**: Đạt 0,823; tăng từ 0,4195 (epoch 1) lên 0,9945 (epoch 14), duy trì ~0,99 từ epoch 14.  
 - **mAP@0.5:0.95 (B)**: Ổn định ở 0,7; tăng từ 0,43797 (epoch 1) lên 0,91569 (epoch 43), dao động nhẹ.  
 - **Precision và Recall (M)**: Đạt ~0,98–1,0 từ epoch 9.  
@@ -74,18 +74,18 @@ Hình ảnh minh họa: ![Ảnh gray 1](images/gray1.png)
   - Train DFL Loss: Giảm từ 1,55846 (epoch 1) xuống 0,86455 (epoch 38).  
   - Validation Loss: Giảm tương ứng, nhưng val/seg_loss và val/box_loss dao động mạnh (lên 9,21518 tại epoch 6).  
 - **Learning Rate**: Giảm từ 0,00031673 (epoch 1) xuống 0,00105638 (epoch 38).  
-- **Nhận xét**: Hiệu suất cao nhưng chưa đạt mục tiêu tại epoch 100 (Precision/Recall ~0,9; mAP@0.5:0.95 ổn định ở 0,7/0,65).  
+- **Nhận xét**: Hiệu suất cao nhưng chưa đạt mục tiêu (Precision/Recall ~0,9; mAP@0.5:0.95 ổn định ở 0,7/0,65).  
 
 Hình ảnh huấn luyện: ![Ảnh train](images/map_plot.png)  
 
 ### 3.2 Phân tích mất mát (Loss)  
-- **Mô hình ảnh màu** ([Hình ảnh minh họa](images/color2.png)):  
+- **Mô hình ảnh màu** ![Hình ảnh minh họa](images/color2.png):  
   - Train Box Loss: Giảm từ 1,2 xuống 0,4.  
   - Validation Box Loss: Giảm từ 0,64 xuống 0,4.  
   - Train Segmentation Loss: Giảm từ 2,73 xuống 0,4.  
   - Validation Segmentation Loss: Giảm từ 0,91 xuống 0,59.  
   - **Nhận xét**: Loss giảm ổn định, không có dấu hiệu overfitting.  
-- **Mô hình ảnh xám** ([Hình ảnh minh họa](images/gray2.png)):  
+- **Mô hình ảnh xám** ![Hình ảnh minh họa](images/gray2.png):  
   - Train Box Loss: Giảm từ 1,45 xuống 0,52.  
   - Validation Box Loss: Giảm từ 0,97 xuống 0,44.  
   - Train Segmentation Loss: Giảm từ 2,93 xuống 0,68.  
@@ -94,12 +94,12 @@ Hình ảnh huấn luyện: ![Ảnh train](images/map_plot.png)
 - **So sánh**: Mô hình ảnh màu vượt trội nhờ khai thác thông tin màu sắc.  
 
 ### 3.3 Ma trận nhầm lẫn (Confusion Matrix)  
-- **Mô hình ảnh màu** ([Hình ảnh minh họa](images/matrix_color.png)):  
+- **Mô hình ảnh màu** ![Hình ảnh minh họa](images/matrix_color.png):  
   - **Crab**: TP = 60, FN = 0, FP = 0; Precision = 1,0, Recall = 1,0, F1-score = 1,0.  
   - **Reference**: TP = 29, FN = 0, FP = 2; Precision = 0,9355, Recall = 1,0, F1-score = 0,9667.  
   - **Background**: TP = 0, FN = 2, FP = 0; Precision = 0, Recall = 0, F1-score = 0.  
   - **Accuracy**: 0,978.  
-- **Mô hình ảnh xám** ([Hình ảnh minh họa](images/matrix_gray.png)):  
+- **Mô hình ảnh xám** ![Hình ảnh minh họa](images/matrix_gray.png):  
   - **Crab**: TP = 76, FN = 0, FP = 4; Precision = 0,95, Recall = 1,0, F1-score = 0,9744.  
   - **Reference**: TP = 29, FN = 0, FP = 2; Precision = 0,9355, Recall = 1,0, F1-score = 0,9667.  
   - **Background**: TP = 0, FN = 6, FP = 0; Precision = 0, Recall = 0, F1-score = 0.  
