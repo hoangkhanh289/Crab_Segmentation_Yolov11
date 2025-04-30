@@ -53,12 +53,6 @@ Hình ảnh minh họa: ![Ảnh color 1](images/color1.png)
 - **Precision và Recall (M)**: Đạt ~0,98–1,0 từ epoch 9.  
 - **mAP@0.5 (M)**: Đạt 0,85; tăng từ 0,50012 (epoch 1) lên 0,9945 (epoch 14), duy trì ~0,99 từ epoch 14.  
 - **mAP@0.5:0.95 (M)**: Ổn định ở 0,65; tăng từ 0,43797 (epoch 1) lên 0,795 (epoch 34), dao động quanh 0,74–0,79.  
-- **Phân tích loss**:  
-  - Train Box Loss: Giảm từ 1,23602 (epoch 1) xuống 0,48049 (epoch 47).  
-  - Train Segmentation Loss: Giảm từ 2,73355 (epoch 1) xuống 0,66682 (epoch 47).  
-  - Train Classification Loss: Giảm từ 3,39483 (epoch 1) xuống 0,35816 (epoch 47).  
-  - Train DFL Loss: Giảm từ 1,4493 (epoch 1) xuống 0,85444 (epoch 47).  
-  - Validation Loss: Giảm tương ứng, nhưng val/seg_loss có dao động.  
 - **Learning Rate**: Giảm từ 0,00031673 (epoch 1) xuống 0,000907848 (epoch 47).  
 - **Nhận xét**: Mô hình đạt hiệu suất cao, với Precision, Recall, và mAP@0.5 gần 0,99–1,0 từ epoch 14, không có dấu hiệu overfitting.  
 
@@ -70,13 +64,7 @@ Hình ảnh minh họa: ![Ảnh gray 1](images/gray1.png)
 - **mAP@0.5:0.95 (B)**: Tăng từ 0,23335 (epoch 1) lên 0,88854 (epoch 38), dao động, chưa ổn định ở 0,7.  
 - **Precision và Recall (M)**: Đạt ~0,94–0,99 từ epoch 9.  
 - **mAP@0.5 (M)**: Tăng từ 0,41072 (epoch 1) lên 0,98522 (epoch 38); đạt ~0,98–0,99 từ epoch 9.  
-- **mAP@0.5:0.95 (M)**: Tăng từ 0,28948 (epoch 1) lên 0,74391 (epoch 38), dao động, chưa ổn định ở 0,65.  
-- **Phân tích loss**:  
-  - Train Box Loss: Giảm từ 1,45957 (epoch 1) xuống 0,52831 (epoch 38).  
-  - Train Segmentation Loss: Giảm từ 2,93753 (epoch 1) xuống 0,68867 (epoch 38).  
-  - Train Classification Loss: Giảm từ 3,56136 (epoch 1) xuống 0,41745 (epoch 38).  
-  - Train DFL Loss: Giảm từ 1,55846 (epoch 1) xuống 0,86455 (epoch 38).  
-  - Validation Loss: Giảm tương ứng, nhưng val/seg_loss và val/box_loss dao động mạnh (lên 9,21518 tại epoch 6).  
+- **mAP@0.5:0.95 (M)**: Tăng từ 0,28948 (epoch 1) lên 0,74391 (epoch 38), dao động, chưa ổn định ở 0,65.   
 - **Learning Rate**: Giảm từ 0,00031673 (epoch 1) xuống 0,00105638 (epoch 38).  
 - **Nhận xét**: Hiệu suất cao nhưng chưa đạt mục tiêu (Precision/Recall ~0,9; mAP@0.5:0.95 ổn định ở 0,7/0,65).  
 
