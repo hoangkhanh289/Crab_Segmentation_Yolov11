@@ -68,16 +68,18 @@ Hình ảnh minh họa: ![Ảnh gray 1](images/gray1.png)
 - **Learning Rate**: Giảm từ 0,00031673 (epoch 1) xuống 0,00105638 (epoch 38).  
 - **Nhận xét**: Hiệu suất cao nhưng chưa đạt mục tiêu (Precision/Recall ~0,9; mAP@0.5:0.95 ổn định ở 0,7/0,65).  
 
-Hình ảnh huấn luyện: ![Ảnh train](images/map_plot.png)  
+ 
 
 ### 3.2 Phân tích mất mát (Loss)  
+**Biểu đồ so sánh quá trình huấn luyện 2 mô hình**
+Hình ảnh huấn luyện: ![Ảnh train](images/map_plot.png) 
 - **Mô hình ảnh màu** ![Hình ảnh minh họa](images/color2.png):  
   - Train Box Loss: Giảm từ 1,2 xuống 0,4.  
   - Validation Box Loss: Giảm từ 0,64 xuống 0,4.  
   - Train Segmentation Loss: Giảm từ 2,73 xuống 0,4.  
   - Validation Segmentation Loss: Giảm từ 0,91 xuống 0,59.  
   - **Nhận xét**: Loss giảm ổn định, không có dấu hiệu overfitting.  
-- **Mô hình ảnh xám** ![Hình ảnh minh họa](images/gray2.png):  
+- **Mô hình ảnh xám** ![Hình ảnh minh họa](images/gray2.png) 
   - Train Box Loss: Giảm từ 1,45 xuống 0,52.  
   - Validation Box Loss: Giảm từ 0,97 xuống 0,44.  
   - Train Segmentation Loss: Giảm từ 2,93 xuống 0,68.  
@@ -86,7 +88,7 @@ Hình ảnh huấn luyện: ![Ảnh train](images/map_plot.png)
 - **So sánh**: Mô hình ảnh màu vượt trội nhờ khai thác thông tin màu sắc.  
 
 ### 3.3 Ma trận nhầm lẫn (Confusion Matrix)  
-- **Mô hình ảnh màu** ![Hình ảnh minh họa](images/matrix_color.png):  
+- **Mô hình ảnh màu** ![Hình ảnh minh họa](images/matrix_color.png)
   - **Crab**: TP = 60, FN = 0, FP = 0; Precision = 1,0, Recall = 1,0, F1-score = 1,0.  
   - **Reference**: TP = 29, FN = 0, FP = 2; Precision = 0,9355, Recall = 1,0, F1-score = 0,9667.  
   - **Background**: TP = 0, FN = 2, FP = 0; Precision = 0, Recall = 0, F1-score = 0.  
